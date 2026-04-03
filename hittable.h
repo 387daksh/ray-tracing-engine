@@ -1,6 +1,6 @@
 #ifndef HITTABLE_H
 #define HITTABLE_H
-#include "ray.h"
+#include "rtweekend.h"
 
 class hit_record{
     public:
@@ -11,7 +11,7 @@ class hit_record{
 
         void set_face_normal(const ray& r,const vec3& outward_normal){
             front_face=dot(outward_normal,r.direction())<0;
-            normal=frontface?outward_normal:-outward_normal;
+            normal=front_face?outward_normal:-outward_normal;
         }
 };
 

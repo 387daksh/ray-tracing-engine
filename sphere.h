@@ -1,6 +1,6 @@
 #ifndef SPHERE_H
 #define SPHERE_H
-#include "ray.h"
+#include "rtweekend.h"
 #include "hittable.h"
 
 class sphere:public hittable{
@@ -26,7 +26,7 @@ class sphere:public hittable{
                 }
             }
             rec.t=root;
-            rec.p=r.at(t);
+            rec.p=r.at(rec.t);
             vec3 outward_normal=(rec.p-center)/radius;
             rec.set_face_normal(r,outward_normal);
             
